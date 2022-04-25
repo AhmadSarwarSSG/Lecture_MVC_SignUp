@@ -33,7 +33,9 @@ namespace Lecture_MVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        //Its will get only request from form that have method="get"
+        //Similarly we can use [HttpPost] for post method
+        [HttpGet] 
         public IActionResult signUp(string username, string email, string password)
         {
             User user01 = new User();
